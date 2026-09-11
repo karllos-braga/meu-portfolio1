@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <header id="nav">
+        <div class="logo">
+            <h1>Karllos Braga</h1>
+        </div>
+            <nav class="navbar">
+                <ul class="navlist">
+                    <li><a href="#hero">Apresentação</a></li>
+                    <li><a href="#sobre">Sobre Mim</a></li>
+                    <li><a href="#servicos">Meus Serviços</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+    </header>
+    <main id="main">
+        <section id="hero">
+            <div class="container">
+                <h1>Bem Vindo(a),<br> me chamo Karllos Braga</h1>
+                <p>Esse é o meu portfólio</p>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="textosobre">
+                <h2>Sobre Mim</h2>
+                <br>
+                <p>Sempre fui apaixonado por tecnologia e tinha certeza de que essa era a carreira que eu queria seguir. Minha jornada começou em 2022, estudando Engenharia Elétrica e Telecomunicações na UPE, mas logo descobri minha verdadeira vocação e migrei para Engenharia da Computação no CIn da UFPE.</p>
+                <p>Sou movido a desafios e inovação. Logo no meu primeiro hackathon na vida o Cidades Inteligentes no Porto Digital, conquistei o 3º lugar com o projeto GreenPulse. Essa energia me levou a outras vitórias, como o 4º lugar no Ideaithon do Senac (Projeto Viarte) e o Top 10 no Hackathon Bemobi (Projeto Bimo).</p>
+                <p>Apoiado por certificações da AWS e do Senac, continuo trabalhando e me aperfeiçoando na criação de produtos digitais, focado principalmente em Web Design, UX/UI e desenvolvimento Full Stack.</p>
+                <br>
+                <div class="habilidades">
+                    <ul class="sobrelist">
+                    <li><a href="#" class="tab-link ativo" onclick="abrirAba(event, 'habilidades')">Habilidades</a></li>
+                    <li><a href="#" class="tab-link" onclick="abrirAba(event, 'certificacoes')">Certificações</a></li>
+                    <li><a href="#" class="tab-link" onclick="abrirAba(event,'formacao')">Formação Acadêmica</a></li>
+                    </ul>
+                    <div id="habilidades" class="conteudo-aba ativo">
+                        <br>
+                        <h4>Backend</h4>
+                        <p>possuo habilidades com banco de dados, POO, classes, encapsulamentos dentre várias outras ferramentas</p>
+                        <br>
+                        <h4>UX/UI</h4>
+                        <p>tenho experiência em UX e design em ferramentas desde Figma até edição de Video com o Premiere</p>
+                        <br>
+                        <h4>Web Developer</h4>
+                        <p>HTML, CSS e javascript, continuo trabalhando para me aperfeiçoar ainda mais em Front End e Web Design</p>
+                        <br>
+                        <h4>Cloud AWS</h4>
+                        <p>Atualmente, sigo fazendo Curso AWS para Cloud e IA</p>
+                    </div>
+                    <div id="certificacoes" class="conteudo-aba">
+                        <br>
+                        <h4>Desenvolvimento de Sistemas – Senac (2025 – 180h)</h4>
+                        <br>
+                        <h4>AWS Cloud e IA - AWS (2026 - Atual)</h4>
+                        <br>
+                    </div>
+                    <div id="formacao" class="conteudo-aba">
+                        <br>
+                        <h4>Engenharia da Computação 2026 - Atual</h4>
+                        <p>Sigo Cursando Superior em Engenharia da Computação na UFPE/ Cin</p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <img src="/img/palestra.jpeg" alt="alt">            
+        </section>
+        <section id="servicos">
+            <h2>Meus Serviços</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h1 class="icone-principal">&lt;/&gt;</h1>
+                    <h3>Web Design</h3>
+                    <p>Para Web Design, HTML, CSS, javascript são as ferramentas que possuo habilidades para desenvolver, além de versionamento em git e Github para trabalhos em equipe. Além de conhecimentos sobre designe User Experience.</p>
+                    
+                    <div class="tech-icons">
+                        <img src="/img/icons/html.svg" alt="HTML">
+                        <img src="/img/icons/css.svg" alt="CSS">
+                        <img src="/img/icons/javascript.svg" alt="JS">
+                        <img src="/img/icons/github-dark.svg" alt="github">
+                    </div>
+                </div>
+                <div class="card">
+                    <h1 class="icone-principal">UX</h1>
+                    <h3>UI/UX Design</h3>
+                    <p>Em UX/UI tenho muitos projetos em Figma, desde Hackathons e Cursos, todos utilizaram figmas para design antes da próxima etapa do desenvolvimento. Ademais, tenho conhecimentos em outras áreas do design como premiere, e até modelagem em 3d para impressão com o Autodesk e Autocad.</p>
+                    <div class="tech-icons">
+                        <img src="/img/icons/figma-light.svg" alt="Figma">
+                        <img src="/img/icons/premiere.svg" alt="Adobe Premiere">
+                        <img src="/img/icons/photoshop.svg" alt="Photshop">
+                        <img src="/img/icons/autodesk-svgrepo-com.svg" alt="Autodesk">
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="icone-banco" src="/img/icons/database-outline.svg" alt="BancoDados">
+                    <h3>BackEnd</h3>
+                    <p>Em Backend, participei de desenvolvimentos em Python, no framework Django, C e C++ com Arduino, banco de dados com Mysql e Postgresql além do serviço da aws para Cloud e IA.</p>
+            
+                    <div class="tech-icons">
+                        <img src="/img/icons/python-dark.svg" alt="Python">
+                        <img src="/img/icons/cpp.svg" alt="C/C++">
+                        <img src="/img/icons/mysql-light.svg" alt="Mysql">
+                        <img src="/img/icons/postgresql-light.svg" alt="postGresql">
+                        <img src="/img/icons/php-light.svg" alt="PHP">
+                        <img src="/img/icons/django.svg" alt="Django">
+                        <img src="/img/icons/arduino.svg">
+                        <img src="/img/icons/aws-light.svg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <h2>Projetos que Participei</h2>
+            <div class="carrossel-container">
+                <div class="projeto-slide ativo">
+                    <div class="projeto-info">
+                        <h3>Ponto</h3>
+                        <p>Originalmente nascido GreenPulse, projeto que ganhou 3 lugar no hackathon cidades inteligentes do porto digital, era uma Plataforma de mapeamento urbano utilizando Google Earth e dados de calor com Identificação de áreas críticas, hoje o projeto evoluiu e se tornou o Ponto, aplicação que está sendo trabalhada até hoje e em breve comercializada. Abaixo estão as tecnologias utilizadas na construção.</p>
+                        <div class="projeto-tags">
+                            <span>React</span>
+                            <span>Figma</span>
+                            <span>PostGre</span>
+                            <span>Github</span>
+                        </div>
+                    </div>
+                    <div class="projeto-imagem">
+                        <img src="/img/green.jpeg" alt="GreenPulse/Ponto">
+                    </div>
+                </div>
+                <div class="projeto-slide">
+                    <div class="projeto-info">
+                        <h3>PI Toaki</h3>
+                        <p>Nascido como um PI do curso na unidade do Senac, o projeto foi crescendo e amadurecendo e hoje chama a anteção de possiveis investidores na área de inovação. Abaixo seguem tecnologias utilizadas no desenvolvimento.</p>
+                        <div class="projeto-tags">
+                            <span>Python</span>
+                            <span>Figma</span>
+                            <span>PostGre</span>
+                            <span>Django</span>
+                            <span>React</span>
+                        </div>
+                    </div>
+                    <div class="projeto-imagem">
+                        <img src="/img/toaki.jpeg" alt="Toaki">
+                    </div>
+                </div>
+                <div class="controles-carrossel">
+                    <button onclick="mudarProjeto(-1)">&#10094;</button>
+                    <button onclick="mudarProjeto(1)">&#10095;</button>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="contato">
+            <div class="containercontato">
+                <h2>Entre em Contato</h2>
+        
+        <!-- O 'action' aponta para o FormSubmit usando o seu email -->
+                <form action="https://formsubmit.co/karllosheenrique@gmail.com" method="POST">
+            
+            <!-- Campos Ocultos do FormSubmit para melhorar sua experiência -->
+            <!-- Desativa o captcha chato -->
+                    <input type="hidden" name="_captcha" value="false"> 
+            <!-- Redireciona para a mesma página após enviar -->
+                    <input type="hidden" name="_next" value="http://SEU-DOMINIO-AQUI.com/#contato"> 
+
+                    <input type="text" name="Nome" placeholder="Seu Nome" required>
+                    <input type="email" name="Email" placeholder="Seu Email" required>
+                    <textarea name="Mensagem" rows="6" placeholder="Sua Mensagem" required></textarea>
+            
+                    <div class="botoes-contato">
+                        <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                
+                <!-- O atributo 'download' avisa o navegador para baixar o arquivo em vez de tentar abrir -->
+                        <a href="/CV/CV_Karllos_Henrique.pdf.pdf" download class="btn-cv">Baixar CV</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2026 desenvolvido por Karllos Braga</p><br>
+        <a href="https://www.linkedin.com/in/karllos-henrique" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    </footer>
+    <script src="/js/script.js"></script>
+</body>
+</html>

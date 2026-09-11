@@ -1,0 +1,633 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background:  #080808;
+    color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#nav {
+    background-color: black;
+    padding: 0px 20px 0px 25px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    position: sticky;
+    z-index: 999;
+    transition:all 0.4s ease;
+}
+#nav.nav-scrolled {
+    background-color: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+}
+.navbar{
+    justify-content: flex-end;
+}
+
+.logo{
+    justify-content:  flex-start;
+    color: crimson;
+}
+
+.navlist{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 5px;
+}
+
+.navlist a {
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    color: rgb(216, 216, 216);
+}
+.navlist a:hover {
+    color: crimson;
+    transition: 0.9s ease;
+}
+
+#hero{
+    width: 100%;
+    height: 100vh;
+    background-image: url(/img/portodigital.jpeg);
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+}
+
+.container {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
+    gap: 10px;
+}
+
+.container h1 {
+    font-size: 50px;
+    font-weight: bolder;
+    line-height: 1.1;
+    color: crimson;
+}
+.container p {
+    font-size: 24px;
+}
+/* Efeito do cursor piscando no final do H1 */
+.container h1::after {
+    content: '|';
+    opacity: 1;
+    animation: piscarCursor 0.8s infinite;
+    color: crimson; /* A cor do cursor */
+}
+
+/* Animação que faz a opacidade ir de 1 (visível) a 0 (invisível) */
+@keyframes piscarCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.logo h1::after {
+    content: '|';
+    opacity: 1;
+    animation: piscarCursor 0.8s infinite;
+    color: crimson;
+}
+
+#sobre {
+    width: 100%;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+}
+
+#sobre img {
+    max-height: 700px;
+    max-width: 500px;
+    border-radius: 10px;
+    margin-top: 10px;
+
+}
+.textosobre {
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.textosobre h2 {
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 1.0;
+}
+.textosobre p {
+    font-size: 18px; /* Reduzi levemente de 20 para 18 para o texto longo ficar mais elegante */
+    line-height: 1.4; /* Dá um espaço agradável entre as linhas de uma mesma frase */
+    margin-bottom: 8px; /* Cria o espaço em branco entre um parágrafo e outro */
+    color: rgb(216, 216, 216); /* Branco levemente acinzentado, perfeito para fundos escuros */
+    text-align: justify; /* Opcional: deixa as bordas do texto retinhas dos dois lados */
+}
+
+.sobrelist{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+}
+
+.sobrelist a {
+    text-decoration: none;
+    padding: 15px 15px 10px 0px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+}
+.conteudo-aba {
+    display: none;
+}
+
+.conteudo-aba.ativo {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(5px); }
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.tab-link.ativo {
+    color:crimson;
+    font-weight: bolder;
+}
+.tab-link::after{
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: crimson;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+.tab-link:hover::after, .tab-link.ativo::after {
+    width: 65%;
+}
+#habilidades {
+    font-size: 20px;
+}
+#habilidades h4 {
+    color: crimson;
+}
+#certificacoes {
+    font-size: 22px;
+}
+#certificacoes h4 {
+    color: crimson;
+}
+#formacao {
+    font-size: 22px;
+}
+#formacao h4 {
+    color: crimson;
+}
+#servicos {
+    padding: 70px 10%;
+    width: 100%;
+}
+
+#servicos h2 {
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 1.0;
+    margin-bottom: 40px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.card {
+    background-color: #262626;
+    padding: 40px 30px;
+    border-radius: 15px;
+    width: 33%;
+    transition: background 0.4s ease, transform 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    background-color: crimson;
+    transform: translateY(-15px);
+}
+
+.icone-principal {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgb(216, 216, 216);
+    margin-bottom: 30px;
+}
+
+.card:hover p {
+    color: #fff;
+}
+
+.tech-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: auto;
+    
+}
+
+.tech-icons img{
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.icone-banco {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 15px;
+}
+
+#projetos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 70px 10%;
+    align-items: flex-start;
+}
+
+#projetos h2 {
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 1.0;
+    margin-bottom: 40px;
+}
+
+.carrossel-container {
+    width: 100%;
+    position: relative;
+}
+
+.projeto-slide {
+    display: none;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    animation: fadeProjeto 0.6s ease;
+    padding-left: 10px;
+}
+
+.projeto-slide.ativo {
+    display: flex;
+}
+
+@keyframes fadeProjeto {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.projeto-info {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.projeto-info h3 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: crimson;
+}
+
+.projeto-info p {
+    font-size: 18px;
+    color: rgb(216, 216, 216);
+    margin-bottom: 20px;
+    line-height: 1.6;
+
+}
+
+.projeto-tags {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    margin-left: 8px;
+    margin-bottom: 8px;
+}
+
+.projeto-tags span {
+    background-color: #262626;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-projeto {
+    background-color: crimson;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-projeto:hover {
+    background-color: #a01020;
+}
+
+
+.projeto-imagem {
+    width: 50%;
+}
+
+.projeto-imagem img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+.controles-carrossel {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    pointer-events: none;
+    margin-top: 0;
+}
+
+.controles-carrossel button {
+    pointer-events: auto;
+    background-color: rgb(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.controles-carrossel button:hover {
+    background-color: crimson;
+    transform: scale(1.1);
+}
+#contato {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 70px 10%;
+    align-items: flex-start;
+}
+
+#contato h2 {
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 1.0;
+    margin-bottom: 40px;
+}
+.containercontato {
+    width: 100%;
+    max-width: 700px; 
+}
+
+/* Estilo das Caixas de Texto (Idêntico à imagem) */
+form input, form textarea {
+    width: 100%;
+    border: none;
+    background-color: #262626; /* Cinza escuro */
+    padding: 18px;
+    margin-bottom: 15px;
+    border-radius: 8px; /* Bordas arredondadas */
+    color: #fff;
+    font-size: 16px;
+    outline: none; /* Remove a borda azul padrão de seleção */
+    font-family: 'Poppins', sans-serif;
+    resize: none; /* Impede de redimensionar a caixa de mensagem livremente */
+}
+
+/* Efeito ao clicar para digitar (Fica com a borda da sua cor tema) */
+form input:focus, form textarea:focus {
+    border: 1px solid crimson;
+    background-color: #333333; /* Fica um pouquinho mais claro quando selecionado */
+}
+
+/* Alinhamento dos botões lado a lado */
+.botoes-contato {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Estilo do Botão Principal (Submit vermelho) */
+.btn-submit {
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-submit:hover {
+    background-color: #a01020;
+}
+
+/* Estilo do Botão Secundário (Download CV) */
+.btn-cv {
+    background-color: transparent;
+    color: crimson;
+    border: 2px solid crimson; /* Botão vazado para não roubar a atenção do Submit */
+    padding: 13px 35px; /* Levemente ajustado por conta da borda */
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.btn-cv:hover {
+    background-color: crimson;
+    color: white;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #141414;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    
+
+}
+.footer p {
+    color: white;
+}
+
+.footer i{
+    font-size: 30px;
+    color: crimson;
+}
+
+/* =========================================
+   RESPONSIVIDADE (TABLETS E CELULARES)
+========================================= */
+
+/* Para telas menores que 992px (Tablets e Laptops pequenos) */
+@media (max-width: 992px) {
+    /* Diminui os espaçamentos laterais enormes das seções */
+    #sobre, #servicos, #projetos, #contato {
+        padding: 60px 5%;
+    }
+    
+    .container {
+        padding-left: 5%;
+    }
+
+    /* Na seção de serviços, os 3 cards podem ficar apertados, 
+       então deixamos eles quebrarem a linha */
+    .cards-container {
+        flex-wrap: wrap; 
+    }
+    .card {
+        width: 45%; /* Ficam 2 em cima e 1 embaixo */
+    }
+}
+
+/* Para telas menores que 768px (Smartphones) */
+@media (max-width: 768px) {
+    
+    /* 1. NAVBAR */
+    #nav {
+        flex-direction: column; /* Empilha a logo e os links */
+        height: auto;
+        padding: 15px 5px;
+    }
+    .navlist {
+        flex-wrap: wrap; /* Permite que os links desçam de linha se não couberem */
+        justify-content: center;
+    }
+    .navlist a {
+        font-size: 16px; /* Diminui a fonte do menu para caber melhor */
+        padding: 5px 10px;
+    }
+
+    /* 2. HERO (Bem Vindo) */
+    .container h1 {
+        font-size: 35px; /* Evita que o título vaze da tela */
+    }
+    .container p {
+        font-size: 18px;
+    }
+
+    /* 3. SOBRE MIM */
+    #sobre {
+        flex-direction: column; /* Empilha texto em cima e foto embaixo */
+    }
+    .textosobre {
+        width: 100%;
+        padding-right: 0;
+    }
+    #sobre img {
+        width: 100%;
+        margin-top: 40px;
+    }
+    .sobrelist {
+        flex-wrap: wrap; /* Se as abas forem grandes, elas quebram a linha */
+        gap: 15px;
+    }
+
+    /* 4. SERVIÇOS */
+    .cards-container {
+        flex-direction: column; /* Um card embaixo do outro */
+    }
+    .card {
+        width: 100%; /* Card ocupa a tela toda do celular */
+    }
+
+    /* 5. PROJETOS */
+    .projeto-slide {
+        flex-direction: column; /* Texto em cima, Imagem embaixo */
+    }
+    .projeto-info {
+        width: 100%;
+    }
+    .projeto-imagem {
+        width: 100%;
+        margin-top: 30px;
+    }
+    
+    /* Reposiciona as setas do carrossel para ficarem debaixo da foto no celular */
+    .controles-carrossel {
+        position: relative; /* Tira o absolute que flutuava sobre a foto */
+        width: 100%;
+        transform: none; /* Tira o alinhamento de eixo Y */
+        margin-top: 20px;
+        top: 0;
+    }
+
+    /* 6. CONTATO */
+    .botoes-contato {
+        flex-direction: column; /* Empilha o botão de Enviar e de Baixar CV */
+    }
+    .btn-submit, .btn-cv {
+        width: 100%; /* Botões gigantes e fáceis de clicar com o dedo */
+        justify-content: center;
+    }
+}
