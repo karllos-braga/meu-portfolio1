@@ -681,6 +681,12 @@ form input:focus, form textarea:focus {
     .container {
         padding-left: 5%;
     }
+    .container h1 {
+        font-size: 40px; /* Evita que o título vaze da tela */
+    }
+    .container p {
+        font-size: 27px;
+    }
 
     /* Na seção de serviços, os 3 cards podem ficar apertados, 
        então deixamos eles quebrarem a linha */
@@ -716,20 +722,30 @@ form input:focus, form textarea:focus {
     }
 
     /* 2. HERO (Bem Vindo) */
+/* Aplica Flexbox no container pai para podermos reordenar os itens */
+/* 2. HERO (Bem Vindo) */
+    .container {
+        position: relative !important;
+        margin-top: 150px !important; /* Empurra o texto para baixo para dar espaço à foto */
+        text-align: center;
+    }
+
     .container h1 {
-        font-size: 30px; /* Evita que o título vaze da tela */
+        font-size: 42px !important; 
     }
+    
     .container p {
-        font-size: 16px;
+        font-size: 28px !important;
     }
-    /* Foto circular menor e reposicionada abaixo do texto */
+    
     .hero-foto {
-        width: 200px;
-        height: 200px;
-        top: auto;
-        bottom: 5%;
-        right: 50%;
-        transform: translateX(50%);
+        position: absolute !important; 
+        top: 12% !important; /* Fixa a foto na parte de cima da tela */
+        bottom: auto !important; /* Remove a âncora da parte de baixo */
+        right: 50% !important;
+        transform: translateX(50%) !important; /* Mantém a foto centralizada */
+        width: 300px !important;
+        height: 300px !important;
     }
 
     /* 3. SOBRE MIM */
