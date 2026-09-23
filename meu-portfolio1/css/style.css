@@ -1,6 +1,3 @@
-/* =========================================
-   RESET E CONFIGURAÇÕES GERAIS
-========================================= */
 *{
     margin: 0;
     padding: 0;
@@ -16,9 +13,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* =========================================
-   NAVBAR
-========================================= */
 #nav {
     background-color: black;
     padding: 0px 20px 0px 25px;
@@ -64,101 +58,13 @@ html {
     transition: 0.9s ease;
 }
 
-/* --- Menu hambúrguer: fica escondido no desktop, some no lugar do .navlist em telas menores --- */
-.hamburguer {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1001;
-}
-
-.hamburguer span {
-    width: 26px;
-    height: 3px;
-    background-color: crimson;
-    border-radius: 3px;
-    transition: all 0.3s ease;
-}
-
-.hamburguer.aberto span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.hamburguer.aberto span:nth-child(2) { opacity: 0; }
-.hamburguer.aberto span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-/* --- Menu lateral: painel que desliza da direita em telas menores --- */
-.menu-lateral {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: min(320px, 80%);
-    height: 100vh;
-    background-color: #141414;
-    border-left: 1px solid crimson;
-    z-index: 1000;
-    transition: right 0.4s ease;
-    display: flex;
-    align-items: center;
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-}
-
-.menu-lateral.aberto {
-    right: 0;
-}
-
-.menu-lista {
-    list-style: none;
-    width: 100%;
-    padding: 0 40px;
-}
-
-.menu-lista li {
-    margin-bottom: 25px;
-}
-
-.menu-link {
-    text-decoration: none;
-    font-size: 20px;
-    color: rgb(216, 216, 216);
-    transition: color 0.3s ease;
-}
-
-.menu-link:hover {
-    color: crimson;
-}
-
-/* --- Fundo escurecido atrás do menu lateral --- */
-.menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-    z-index: 998;
-}
-
-.menu-overlay.aberto {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* =========================================
-   HERO / BANNER PRINCIPAL
-========================================= */
 #hero{
     width: 100%;
     height: 100vh;
-    background-color: #080808; /* antes era a imagem de fundo cobrindo a seção inteira */
+    background-image: url(../img/portodigital.jpeg);
+    background-size: cover;
+    background-position: center;
     padding: 10px;
-    position: relative; /* necessário para posicionar a foto circular */
-    overflow: hidden; /* evita que o brilho da foto vaze e cause scroll lateral */
 }
 
 .container {
@@ -192,7 +98,6 @@ html {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
-/* Cursor piscando no texto do logo (mesmo efeito usado no H1 do hero) */
 .logo h1::after {
     content: '|';
     opacity: 1;
@@ -200,35 +105,6 @@ html {
     color: crimson;
 }
 
-/* --- Foto de perfil em formato circular, com brilho vermelho ao redor --- */
-.hero-foto {
-    position: absolute;
-    top: 50%;
-    right: 8%;
-    transform: translateY(-50%);
-    width: 480px;
-    height: 480px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 100px 40px rgba(220, 20, 60, 0.55),
-                0 0 220px 90px rgba(220, 20, 60, 0.25);
-}
-
-.hero-foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* IMPORTANTE: esta foto espera este HTML dentro da #hero, como irmão do .container:
-   <div class="hero-foto">
-       <img src="../img/sua-foto.jpg" alt="Foto de perfil">
-   </div>
-*/
-
-/* =========================================
-   SOBRE MIM
-========================================= */
 #sobre {
     width: 100%;
     padding-right: 10%;
@@ -315,10 +191,6 @@ html {
 .tab-link:hover::after, .tab-link.ativo::after {
     width: 65%;
 }
-
-/* =========================================
-   ABAS DE INFORMAÇÕES (HABILIDADES / CERTIFICAÇÕES / FORMAÇÃO)
-========================================= */
 #habilidades {
     font-size: 20px;
 }
@@ -337,10 +209,6 @@ html {
 #formacao h4 {
     color: crimson;
 }
-
-/* =========================================
-   SERVIÇOS
-========================================= */
 #servicos {
     padding: 70px 10%;
     width: 100%;
@@ -416,9 +284,6 @@ html {
     margin-bottom: 15px;
 }
 
-/* =========================================
-   PROJETOS (CARROSSEL)
-========================================= */
 #projetos {
     display: flex;
     flex-direction: column;
@@ -554,10 +419,6 @@ html {
     background-color: crimson;
     transform: scale(1.1);
 }
-
-/* =========================================
-   CONTATO
-========================================= */
 #contato {
     display: flex;
     flex-direction: column;
@@ -644,9 +505,6 @@ form input:focus, form textarea:focus {
     color: white;
 }
 
-/* =========================================
-   FOOTER
-========================================= */
 .footer {
     display: flex;
     flex-direction: column;
@@ -690,46 +548,32 @@ form input:focus, form textarea:focus {
     .card {
         width: 45%; /* Ficam 2 em cima e 1 embaixo */
     }
-
-    /* NAVBAR: a partir daqui (tablets e celulares) o menu vira hambúrguer */
-    .navlist {
-        display: none;
-    }
-    .hamburguer {
-        display: flex;
-    }
-
-    /* Foto circular um pouco menor em telas de tablet */
-    .hero-foto {
-        width: 360px;
-        height: 360px;
-        right: 5%;
-    }
 }
 
 /* Para telas menores que 768px (Smartphones) */
 @media (max-width: 768px) {
     
-    /* 1. NAVBAR: já tratada pelo menu hambúrguer no breakpoint de 992px acima */
+    /* 1. NAVBAR */
     #nav {
-        padding: 15px 20px;
+        flex-direction: column; /* Empilha a logo e os links */
+        height: auto;
+        padding: 15px 5px;
+    }
+    .navlist {
+        flex-wrap: wrap; /* Permite que os links desçam de linha se não couberem */
+        justify-content: center;
+    }
+    .navlist a {
+        font-size: 16px; /* Diminui a fonte do menu para caber melhor */
+        padding: 5px 10px;
     }
 
     /* 2. HERO (Bem Vindo) */
     .container h1 {
-        font-size: 30px; /* Evita que o título vaze da tela */
+        font-size: 35px; /* Evita que o título vaze da tela */
     }
     .container p {
-        font-size: 16px;
-    }
-    /* Foto circular menor e reposicionada abaixo do texto */
-    .hero-foto {
-        width: 200px;
-        height: 200px;
-        top: auto;
-        bottom: 5%;
-        right: 50%;
-        transform: translateX(50%);
+        font-size: 18px;
     }
 
     /* 3. SOBRE MIM */

@@ -37,24 +37,6 @@ function mudarProjeto(direcao){
 }
 
 
-// --- MENU HAMBÚRGUER (MOBILE/TABLET) --- //
-const hamburguer = document.querySelector('.hamburguer');
-const menuLateral = document.querySelector('.menu-lateral');
-const menuOverlay = document.querySelector('.menu-overlay');
-
-function alternarMenu(){
-    hamburguer.classList.toggle('aberto');
-    menuLateral.classList.toggle('aberto');
-    menuOverlay.classList.toggle('aberto');
-}
-
-function fecharMenu(){
-    hamburguer.classList.remove('aberto');
-    menuLateral.classList.remove('aberto');
-    menuOverlay.classList.remove('aberto');
-}
-
-
 // --- EFEITO DE DIGITAÇÃO (MÁQUINA DE ESCREVER) --- //
 function efeitoDigitacao(elemento, texto, velocidade) {
     // PROTEÇÃO: Limpa qualquer digitação anterior para não encavalar
